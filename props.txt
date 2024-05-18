@@ -1,0 +1,50 @@
+In React, props (short for properties) are a fundamental concept. They are a way of passing data from parent to child components in a React application.
+
+Here's how props work:
+
+Passing Props: You pass props from a parent component to a child component when you include the child component in the JSX of the parent component. You can pass any data type as props, including strings, numbers, arrays, objects, functions, etc.Example:
+jsx
+Copy code
+// ParentComponent.js
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  return (
+    <div>
+      <ChildComponent name="John" age={30} />
+    </div>
+  );
+}
+Receiving Props: In the child component, you receive props as an argument to the functional component (or as a parameter in the class component constructor) and use them as needed.Example:
+jsx
+Copy code
+// ChildComponent.js
+function ChildComponent(props) {
+  return (
+    <div>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+Using Props: Once received, you can use props to dynamically render content, pass data, or trigger functionality within the child component.Example:
+jsx
+Copy code
+// ChildComponent.js
+function ChildComponent(props) {
+  return (
+    <div>
+      <p>Name: {props.name}</p>
+      <p>Age: {props.age}</p>
+      <button onClick={props.onClick}>Click Me</button>
+    </div>
+  );
+}
+Immutable Props: Props are immutable, meaning they cannot be modified by the child component. They are read-only. If you need to modify data, you can do it in the parent component and pass the modified data down as props again.
+Props play a crucial role in React's component-based architecture, facilitating the building of reusable and composable UI components.
+
+
+
+
+
+

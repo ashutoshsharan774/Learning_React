@@ -1,0 +1,59 @@
+The difference between Real Dom vs Virtual Dom::
+Real DOM: The DOM (Document Object Model) is a programming interface for HTML and XML documents. The real DOM represents the actual HTML structure of a web page. Manipulating the real DOM directly can be slow because any changes trigger reflows and repaints, which are expensive operations.
+Virtual DOM: The Virtual DOM is a lightweight copy of the real DOM maintained by React. It's a JavaScript representation of the actual DOM elements.
+
+Benefits:
+Performance: Manipulating the Virtual DOM is faster than directly manipulating the real DOM because changes are batched and optimized.
+Cross-platform consistency: The Virtual DOM helps maintain consistency across different platforms by abstracting away the underlying differences in browser implementations of the real DOM.
+Developer productivity: Developers can work with a more familiar and expressive programming model (JSX) while letting React handle the efficient updating of the UI.
+
+How Does the Virtual DOM Work?
+> Initialization: When a React component is first rendered, React creates a virtual DOM tree that mirrors the structure of the actual DOM.
+> Rendering: Whenever there's a change in the component's state or props, React re-renders the component and generates a new virtual DOM tree.
+> Diffing: React compares the new virtual DOM tree with the previous one to identify the differences.
+> Reconciliation: React updates the real DOM efficiently by applying only the necessary changes identified during the diffing process.
+> Completion: After updating the real DOM, React completes the rendering cycle, and the UI is updated on the screen.
+
+
+Difference between virtual dom and fibre in React
+
+The Virtual DOM and React Fiber are related concepts in React, but they serve different purposes and address different aspects of the rendering process.
+
+Virtual DOM:
+
+Purpose:
+The Virtual DOM is a lightweight, in-memory representation of the actual DOM structure.
+It acts as an intermediary between the React components and the real DOM, allowing React to efficiently update the UI by minimizing direct manipulations of the real DOM.
+
+Reconciliation:
+The Virtual DOM facilitates the process of reconciliation, where React compares the current Virtual DOM with a previous version to identify the differences (or "diffs").
+React then applies only the necessary changes to the real DOM, resulting in better performance by minimizing unnecessary DOM manipulations.
+
+Performance Optimization:
+By leveraging the Virtual DOM, React optimizes performance by batching and optimizing updates to the real DOM.
+Updates to the Virtual DOM are typically faster than directly manipulating the real DOM, leading to smoother user experiences.
+
+React Fiber:
+Purpose:
+React Fiber is a reimplementation of the React reconciliation algorithm, introduced in React version 16.0.
+It aims to improve the rendering performance and enable new features like asynchronous rendering and error boundaries.
+
+Rendering Algorithm:
+Fiber introduces a more efficient rendering algorithm that prioritizes and schedules updates based on their priority levels.
+It allows React to perform work in smaller, incremental units, making the rendering process more predictable and responsive.
+
+Asynchronous Rendering:
+One of the key features of React Fiber is its support for asynchronous rendering, which enables React to interrupt rendering work to handle high-priority updates, such as user interactions or animations.
+Asynchronous rendering improves the user experience by ensuring that critical interactions are not blocked by ongoing rendering tasks.
+
+Concurrent Mode:
+Fiber enables Concurrent Mode, a rendering mode where React can render and commit updates in a non-blocking manner.
+Concurrent Mode allows React to prioritize and schedule rendering work based on its urgency and importance, leading to smoother user interfaces and better performance under heavy load.
+In summary, while the Virtual DOM serves as an efficient representation of the actual DOM structure, facilitating reconciliation and performance optimization, React Fiber is a reimplementation of the React reconciliation algorithm, introducing features like asynchronous rendering and Concurrent Mode to improve rendering performance and responsiveness.
+
+******To read documentation on react Fiber********
+Visit :https://github.com/acdlite/react-fiber-architecture
+
+
+
+

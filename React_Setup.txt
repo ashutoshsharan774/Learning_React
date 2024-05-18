@@ -1,0 +1,43 @@
+In react we basically have to create a react application and we can then start building our componenets and building your application
+Overall, ReactJS provides a powerful and efficient way to build interactive and dynamic user interfaces for web applications. It has a vibrant ecosystem with a wide range of tools, libraries, and community support, making it a popular choice for front-end development.
+React has componenet based architecture:
+"React follows a component-based architecture, where UIs are composed of small, reusable components.
+Components encapsulate both the structure and behavior of a part of the UI, making it easier to manage and maintain large-scale applications."
+
+
+
+
+Certainly! Using npx along with create-react-app is a convenient way to create a new React application without needing to install create-react-app globally. Here are the steps to create a new React application using npx:
+
+Open your Terminal or Command Prompt:
+Open your terminal or command prompt application on your computer.
+Run npx create-react-app:  //create-react-app is a utility
+Run the following command to create a new React application:
+lua
+Copy code
+npx create-react-app my-react-app
+Replace my-react-app with your preferred app name.
+Navigate to the Project Directory:
+Once the installation process is complete, navigate to the project directory:
+bash
+Copy code
+cd my-react-app
+Start the Development Server:
+Start the development server by running:
+sql
+Copy code
+npm start
+This command will start the development server and open your new React application in your default web browser. You should see a default React starter template.
+That's it! You've successfully created a new React application using npx and create-react-app. You can now start developing your React components and building your application. The project directory contains everything you need to get started, including configuration files, dependencies, and a folder structure for your React components.
+
+n summary, npm is used for managing JavaScript packages and project dependencies, while npx is used for executing Node.js packages directly from the npm registry without the need for permanent installation.
+
+
+
+Create react app:Create React App is a command-line tool that helps you bootstrap a new React project with all the necessary configurations and dependencies set up. It provides a quick and easy way to start building React applications without having to manually configure build tools like webpack or Babel.
+Vite:Vite is a modern build tool for web development, primarily focused on providing a fast and optimized development experience for front-end developers. Vite is a bundler
+        Overall, Vite aims to improve the developer experience by offering a fast, optimized, and framework-agnostic build tool for modern web development projects. Its focus on speed and efficiency makes it a popular choice among front-end developers looking to streamline their development workflow.
+        //We are learning to create react project using Vite
+
+>>>>>The way of reading a folder/project that we have created using npx crate-my-app and vite is reading file called package.json in it.
+While we created folder 01vitereact we need to install nodemodules package as it wasn't there so we went to 01vitereact and wrote a cmd called ***npm.install *** so packages left out will be installed
