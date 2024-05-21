@@ -11,7 +11,7 @@ let myObj={
   userName:'Ashu',
   Age:'19'
 }
-//Similarily in cards we can pass array as well
+//Similarily in cards we can pass array as well like we did with myObj
 let myArr=[1,2,3]
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     <>
      <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind text</h1> 
      <Card  username="Ashu" btntxt='Click me' />
-     {/* <Card channel="chaiaurcode" someObj={myObj}/> */}
+     {/* <Card channel="chaiaurcode" someObj={myObj}  ye object variable mei pass krna pdega and for that we need curly braces/>   jo bhi value yahe se pass kr denge that will be shown in props */}
      <Card username='Gautam' btntxt='Visit me'/>
     
     </>

@@ -11,7 +11,7 @@ import User from './components/User/User.jsx'
 import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
 
-/*
+/* 
 Guide for using outlet
 Set Up Your Routes: Define your routes using the createBrowserRouter function. Some routes will have child routes, which will be rendered inside the Outlet component.
 

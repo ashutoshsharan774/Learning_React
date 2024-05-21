@@ -2,10 +2,11 @@
 
 import React from 'react'
 
+//In this case instead of using props.username or props.btntxt we destructured and directly wrote {username,btntxt} agar koi btntxt pass ni kara app.jsx then uski default value pass kr dete h 
 function Card({username,btntxt='visit me'}){
 //passed default value for btntxt --> agar btntxt mei jo value h wo pass ni hui then default value gets passed
-    //function Card(props) -> a way of declaring props
-    //console.log(props.username)
+    //function Card(props) -> a way of declaring props 
+    //console.log(props.username) since props is an object
 
     console.log(username);
     //another way of declaring props is not using 'prop' word instead just use {channel}

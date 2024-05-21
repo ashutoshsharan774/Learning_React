@@ -3,7 +3,7 @@ import UserContext from './UserContext'
 import { useState } from 'react'
 
 function UserContextProvider({children}) {
-    // takes children as a prop, which represents the child components that will be wrapped by MyProvider.
+    // takes children as a prop, which represents the child components that will be wrapped by UserContextProvider.
     const [user,setUser]=useState(null)
     return (
         <>
@@ -12,6 +12,7 @@ function UserContextProvider({children}) {
              {/* we get a property i.e value inside provider to specify ki konsi value ko access de rhe ho
               Here we passed an object 
               This makes the state and the updater function available to any child components that consume this context.
+              basically, you need to use a Provider component to make the context available to the component tree. The Provider component accepts a value prop, which will be passed down to the components that consume this context.
               */}
 
 

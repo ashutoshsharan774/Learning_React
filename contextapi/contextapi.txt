@@ -1,0 +1,36 @@
+import React, { createContext, useContext, useState } from 'react';
+
+// Create a Context
+const MyContext = createContext();
+
+// Create a provider component
+const MyProvider = ({ children }) => {
+  const [value, setValue] = useState("Hello, World!");
+  
+  return (
+    <MyContext.Provider value={{ value, setValue }}>
+      {children}
+    </MyContext.Provider>
+  );
+};
+
+// Consume context in a functional component
+const MyComponent = () => {
+  const { value, setValue } = useContext(MyContext);
+  
+  return (
+    <div>
+      <p>{value}</p>
+      <button onClick={() => setValue("New Value")}>Change Value</button>
+    </div>
+  );
+};
+
+// Usage in App
+const App = () => (
+  <MyProvider>
+    <MyComponent />
+  </MyProvider>
+);
+
+export default App;

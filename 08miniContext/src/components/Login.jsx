@@ -6,7 +6,7 @@ function Login() {
     const [username,staeUsername]=useState('');
     const [password,setUserpassword]=useState('');
 
-    //how to fetch the value from UserContext
+    //how to fetch the value from UserContext --setUser UserContextProvider mei defined ha 
     const {setUser}=useContext(UserContext)
 
 
