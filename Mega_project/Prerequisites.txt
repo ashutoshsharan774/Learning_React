@@ -1,0 +1,58 @@
+React is a front-end library used for API handling and cannot handle authentication and authorization on its own
+
+-> Handling errors, image uploading, and text formatting in the backend
+
+-> Appwrite is an open-source backend as a service similar to Firebase
+
+-> Appwrite provides comprehensive back-end services for authentication, user management, and database storage.
+
+->  Appwrite backend provides functionality to create, read, update, and delete articles with different user roles.
+
+-> Using TinyMCE and React Hook forms for a rich text editor and form handling in the backend
+
+-> Use Appwrite backend for React project
+
+-> Appwrite provides comprehensive documentation for various features and functionalities.
+
+Installing all these dependencies so that we can usse them in our project
+
+[EnvironmentVariables in layman terms:{Imagine you have a baking recipe, and the recipe sometimes needs to use specific ingredients that can change based on where you're baking (like at home or at a friend's house). Instead of writing down the exact ingredient every time in the recipe, you write down a placeholder like "sugarAmount". Then, when you're actually baking, you look at your special notes to see how much sugar to use in that particular kitchen.
+In the same way, environment variables are placeholders used in software development. They store important information like passwords, database locations, or API keys. Instead of hardcoding these values directly into the code, developers use environment variables. This way, they can easily change the values without modifying the code, which makes the software more flexible and secure.
+So, in simple terms, environment variables are like customizable notes that tell a program how to behave in different situations.}
+
+
+
+Environment Variables:In summary, environment variables play a significant role in managing configurations, ensuring security, enhancing flexibility, and supporting the deployment of applications across diverse environments. They are a fundamental part of modern software development and operations practices.
+   -> Sensitive Information: They are often used to store sensitive information such as API keys, database credentials, and secret tokens. This avoids hardcoding sensitive data into the source code, which can be a security risk.
+    ->Consistency Across Environments: Environment variables ensure that the same application can run in different environments (e.g., different servers, containers) with consistent configurations.
+    Environment-Specific Settings: They allow applications to adapt to different environments without changing the underlying code. ]
+
+Method 1: (of creating environment variables)
+//Jab bhi environment variables hm banayenge toh wo variables project ke root mei honi chahiye such as readMe,package.json basically project k home directory
+.env file bana
+then us file ke inside likh "REACT_APP_APPWRITE_URL=test environment"
+add this file to gitignore because isko github pr ni daalna but the issue is ki hume bhi toh ye .env file chahiye hogi i.e which variables are being shipped are to be known to us 
+therefore create a .envsample file  ,in this file we will keep variables but will empty out those variables and this file can be shipped 
+
+There are different ways of how .env file's variables can be rendered in front-end,back-end so lets go in app.jsx and check in console
+
+Now if someone has made app with create-react-app so its mandate to name env variable using REACT_APP and process.env.REACT_APP(whatever we name it ) will expose what's stored in this variable but since in our
+case we have made app with vite so there is a slight change in ways we declare and expose env variables(read documentation for this undertanding)
+So the changes are as follows:
+            -> VITE_{whatever the name of variable}
+            -> this variable will be exposed using import.meta.env.VITE_(whatever the name)
+            Similarily there is diff syntax for diff environments using which we r creating app(Next.js mei dusra way hoga)
+
+So, now after doing all needful for the .env variables we focus on ways to render or expose those variables
+ a good practice is making a config folder n conf.js file inside it and create an object overthere
+in that object write the env variables and their repective ids(parsed into string) in key:value pair form n then export that object
+So the value in the object will be import.meta.env.variable_name that's how we will access .env variables
+
+
+
+Now, we created a folder appwrite in src so all work related to appwrite will be done there
+Like authentication in appwrite provides us with a code snippet that how a client is created and its userId , email n all
+So reading documentation is important:for auth:https://appwrite.io/docs/products/auth/quick-start
+No need to worry about encryption and other features , will be taken care of by appwrite
+
+
