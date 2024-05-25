@@ -1,0 +1,15 @@
+Why we need to warp in provider in redact-redux
+ChatGPT
+In redact-redux, "wrapping in a provider" typically refers to the practice of using a Redux <Provider> component to make the Redux store available to the entire application or a part of it. This is necessary for several reasons:
+
+State Management: Redux centralizes the application's state in a single store. Wrapping the application in a <Provider> allows components within the app to access and interact with this centralized state.
+
+Context API: The <Provider> component leverages React's Context API to pass the Redux store to any nested components that need to connect to the store using connect or useSelector and useDispatch hooks. Without the <Provider>, these components wouldn't be able to access the Redux store.
+
+Reactivity: When you wrap your app in a <Provider>, any changes in the Redux store automatically trigger re-renders in the connected components. This ensures that your UI is always in sync with the state.
+
+In summary, wrapping your application in a Redux <Provider> is essential because it allows you to:
+
+Access the centralized state from any component.
+Use Redux hooks and connect to interact with the store.
+Ensure that the UI updates in response to state changes in the store.
